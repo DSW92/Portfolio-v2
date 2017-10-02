@@ -1,4 +1,4 @@
-	* {
+* {
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -279,6 +279,27 @@ h2.section-heading {
 	#offer {
 		hr {
 			padding-bottom: 30px;
+		}
+	}
+}
+
+@media screen and (min-device-width: 768px) {
+	.navbar-fixed-top.scrolled {
+		background-color: #fff !important;
+		transition: background-color 200ms linear;
+		#brand {
+			margin-top: 5px;
+			color: navy;
+		}
+		#brand:hover {
+			color: grey;
+		}
+		.nav-link {
+			margin-top: 8px;
+			color: black;
+		}
+		.nav-link:hover {
+			color: navy;
 		}
 	}
 }
