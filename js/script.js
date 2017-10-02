@@ -5,6 +5,57 @@ $(document).ready(function () {
         $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
     });
 
+    var brandLink = $('#brand');
+    var pageTop = $('#page-top');
+    var navLinks = $('.nav-link');
+    var offerSection = $('#offer');
+    var techSection = $('#tech');
+    var portfolioSection = $('#portfolio');
+    var contactSection = $('#contact');
+    var moreBtn = $('.more-button');
+
+    brandLink.click(() => {
+        $('html, body').animate({
+            scrollTop: pageTop.offset().top
+        }, 500);
+    });
+
+    navLinks.eq(0).click(() => {
+        $('html, body').animate({
+            scrollTop: pageTop.offset().top
+        }, 500);
+    });
+
+    navLinks.eq(1).click(() => {
+        $('html, body').animate({
+            scrollTop: (offerSection.offset().top - 50)
+        }, 500);
+    });
+
+    navLinks.eq(2).click(() => {
+        $('html, body').animate({
+            scrollTop: (techSection.offset().top - 60)
+        }, 500);
+    });
+
+    navLinks.eq(3).click(() => {
+        $('html, body').animate({
+            scrollTop: (portfolioSection.offset().top - 50)
+        }, 500);
+    });
+
+    navLinks.eq(4).click(() => {
+        $('html, body').animate({
+            scrollTop: (contactSection.offset().top - 50)
+        }, 500);
+    });
+
+    moreBtn.click(() => {
+        $('html, body').animate({
+            scrollTop: (offerSection.offset().top - 50)
+        }, 500);
+    });
+
 
     // ------------ jQuery SVG 3D Tag Cloud Plugin --------------- //
     var entries = [
