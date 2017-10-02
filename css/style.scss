@@ -3,6 +3,10 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+.offset-color {
+	color: navy !important;
+}
+
 body,
 html {
 	background-color: black;
@@ -369,7 +373,7 @@ h2.section-heading {
 	bottom: 100%;
 	left: 0;
 	right: 0;
-	background-color: rgba(0, 0, 128, 0.8);
+	background-color: rgba(128, 128, 128, 0.9);
 	overflow: hidden;
 	width: calc(100% - 30px);
 	height: 0;
@@ -382,7 +386,8 @@ h2.section-heading {
 }
 
 .text {
-	white-space: nowrap;
+	// white-space: nowrap;
+	width: 90%;
 	color: white;
 	font-size: 20px;
 	position: absolute;

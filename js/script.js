@@ -56,6 +56,8 @@ $(document).ready(function () {
         }, 500);
     });
 
+    // WARNING - SCROLLING CAUSING PROBLEM ON IE !!!!!! --------------------------------- //
+
 
     // ------------ jQuery SVG 3D Tag Cloud Plugin --------------- //
     var entries = [
