@@ -303,3 +303,92 @@ h2.section-heading {
 		}
 	}
 }
+
+#tag-cloud {
+	display: flex;
+	text {
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-device-width: 768px) {
+	#tag-cloud {
+		text {
+			font-size: 20px;
+		}
+	}
+}
+
+#tech {
+	background-image: url("../images/tech.jpg");
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#tech div.col-lg-12 {
+	h2 {
+		color: white;
+	}
+}
+
+#portfolio img {
+	width: 100%;
+	height: auto;
+	border: 1px solid grey;
+}
+
+.single-project {
+	margin-top: 20px;
+}
+
+#portfolio {
+	background-color: white;
+	div.container-fluid {
+		padding-bottom: 30px;
+	}
+}
+
+// ------- Images overlay styling here ------- //
+.single-project {
+	position: relative;
+}
+
+.single-project {
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.overlay {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+	background-color: #008CBA;
+	overflow: hidden;
+	width: calc(100% - 30px);
+	height: 0;
+	transition: .5s ease;
+}
+
+.single-project:hover .overlay {
+	bottom: 0;
+	height: 100%;
+}
+
+.text {
+	white-space: nowrap;
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	overflow: hidden;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
