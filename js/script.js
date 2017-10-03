@@ -64,51 +64,46 @@ $(document).ready(function () {
     var proj = navLinks.eq(3)[0];
     var contact = navLinks.eq(4)[0];
 
-    $(document).on('scroll', function() {
-        if ($(this).scrollTop()>pageTop.position().top) {
+    $(document).on('scroll', function () {
+        if ($(this).scrollTop() > pageTop.position().top) {
             about.classList.add("color");
-        }
-        else {
+        } else {
             about.classList.remove("color");
         }
     });
 
-    $(document).on('scroll', function() {
-        if ($(this).scrollTop()>=offerSection.position().top - 60) {
+    $(document).on('scroll', function () {
+        if ($(this).scrollTop() >= offerSection.position().top - 60) {
             offer.classList.add("color");
             about.classList.remove("color");
-        }
-        else {
+        } else {
             offer.classList.remove("color");
         }
     });
 
-    $(document).on('scroll', function() {
-        if ($(this).scrollTop()>=techSection.position().top - 70) {
+    $(document).on('scroll', function () {
+        if ($(this).scrollTop() >= techSection.position().top - 70) {
             tech.classList.add("color");
             offer.classList.remove("color");
-        }
-        else {
+        } else {
             tech.classList.remove("color");
         }
     });
 
-    $(document).on('scroll', function() {
-        if ($(this).scrollTop()>=portfolioSection.position().top - 60) {
+    $(document).on('scroll', function () {
+        if ($(this).scrollTop() >= portfolioSection.position().top - 60) {
             proj.classList.add("color");
             tech.classList.remove("color");
-        }
-        else {
+        } else {
             proj.classList.remove("color");
         }
     });
 
-    $(document).on('scroll', function() {
-        if ($(this).scrollTop()>=contactSection.position().top - 60) {
+    $(document).on('scroll', function () {
+        if ($(this).scrollTop() >= contactSection.position().top - 60) {
             contact.classList.add("color");
             proj.classList.remove("color");
-        }
-        else {
+        } else {
             contact.classList.remove("color");
         }
     });
@@ -188,7 +183,7 @@ $(document).ready(function () {
             label: 'Gimp',
             url: 'https://www.gimp.org/',
             target: '_top'
-        }        
+        }
 
     ];
 
@@ -234,5 +229,54 @@ $(document).ready(function () {
     })();
     // ------------ jQuery SVG 3D Tag Cloud Plugin --------------- //
 
+
+    // Form Validation ------------------------------------ //
+    // Form is not valid on page load //
+    var isFormValid = false;
+
+    // input variables //
+    var email = $('#email');
+    var subject = $('#subject');
+    var message = $('#message');
+    var subtmitBtn = $('#submit');
+
+    var form = $('#contact-form');
+
+    var isEmailValid = function () {
+        var emailVal = email.val();
+        return emailVal.indexOf('@') > -1 && emailVal.length <= 100;
+    };
+
+    var isSubjectValid = function () {
+        var subjectVal = subject.val();
+        return subjectVal.length > 0 && subjectVal.length <= 100;
+    };
+
+    var isMessageValid = function () {
+        var messageVal = message.val();
+        return messageVal.length > 0 && messageVal.length <= 500;
+    };
+
+    function formValidation() {
+        var isFormValid = isEmailValid() && isSubjectValid() && isMessageValid();
+
+        if (isFormValid === false) {
+            alert('Błąd. Proszę sprawdzić czy pola zostały poprawnie wypełnione.');
+        } else {
+            $.ajax({
+                url: "https://formspree.io/dominik.s.wojtowicz@gmail.com",
+                method: "POST",
+                data: form.serialize(),
+                dataType: "json"
+            });
+            alert('Wiadomość została wysłana');
+            form[0].reset();
+        }
+    };
+
+    subtmitBtn.click(function(event) {
+        event.preventDefault();
+        formValidation();
+    });
 
 });
