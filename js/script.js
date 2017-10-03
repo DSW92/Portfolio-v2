@@ -56,6 +56,63 @@ $(document).ready(function () {
         }, 500);
     });
 
+    // ---- Page scroll position identification and propper nav link highlight ---- //
+
+    var about = navLinks.eq(0)[0];
+    var offer = navLinks.eq(1)[0];
+    var tech = navLinks.eq(2)[0];
+    var proj = navLinks.eq(3)[0];
+    var contact = navLinks.eq(4)[0];
+
+    $(document).on('scroll', function() {
+        if ($(this).scrollTop()>pageTop.position().top) {
+            about.classList.add("color");
+        }
+        else {
+            about.classList.remove("color");
+        }
+    });
+
+    $(document).on('scroll', function() {
+        if ($(this).scrollTop()>=offerSection.position().top - 60) {
+            offer.classList.add("color");
+            about.classList.remove("color");
+        }
+        else {
+            offer.classList.remove("color");
+        }
+    });
+
+    $(document).on('scroll', function() {
+        if ($(this).scrollTop()>=techSection.position().top - 70) {
+            tech.classList.add("color");
+            offer.classList.remove("color");
+        }
+        else {
+            tech.classList.remove("color");
+        }
+    });
+
+    $(document).on('scroll', function() {
+        if ($(this).scrollTop()>=portfolioSection.position().top - 60) {
+            proj.classList.add("color");
+            tech.classList.remove("color");
+        }
+        else {
+            proj.classList.remove("color");
+        }
+    });
+
+    $(document).on('scroll', function() {
+        if ($(this).scrollTop()>=contactSection.position().top - 60) {
+            contact.classList.add("color");
+            proj.classList.remove("color");
+        }
+        else {
+            contact.classList.remove("color");
+        }
+    });
+
     // WARNING - SCROLLING CAUSING PROBLEM ON IE !!!!!! --------------------------------- //
 
 
